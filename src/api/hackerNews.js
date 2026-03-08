@@ -16,3 +16,17 @@ export const getNewsIds = createAsyncThunk(
     }
   }
 )
+
+export const getNews = createAsyncThunk(
+  'news/getNews',
+  async (ids, thunkAPI) => {
+    try {
+      const items = ids.map((el) => axios.get(`${API_NEWS_ID}${el}.json`))
+      const responses = await Promise.all(items)
+      const result = responses.map((el) => el.data)
+      return result
+    } catch (error) {
+      return thunkAPI.rejectWithValue(error.message)
+    }
+  }
+)
