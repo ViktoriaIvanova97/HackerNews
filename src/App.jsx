@@ -1,11 +1,12 @@
 import './App.css'
 import { MainPage } from './components/pages/MainPage'
+import { Route, Routes } from 'react-router-dom'
 
 function App() {
   return (
-    <>
-      <MainPage />
-    </>
+    <Routes>
+      <Route path="*" element={<MainPage />} />
+    </Routes>
   )
 }
 

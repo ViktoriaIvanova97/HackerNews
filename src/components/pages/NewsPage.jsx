@@ -18,10 +18,10 @@ export function NewsPage() {
       dispatch(getNews(newsIds))
     }
   }, [newsIds])
-
+console.log(story);
   return (
     <div>
-      <ul>
+      <ul className='news-page'>
         {story.map((el) => (
           <NewsItem key={el.id} el={el} />
         ))}

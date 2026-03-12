@@ -6,7 +6,7 @@ import newsReducer from './slices/newsSlice'
 const newsIdsPersist = {
   key: 'news',
   storage,
-  whitelist: ['ids'],
+  whitelist: ['ids', 'items'],
 }
 
 const rootReduser = combineReducers({

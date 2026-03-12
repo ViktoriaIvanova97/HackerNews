@@ -1,8 +1,38 @@
-body{
+body {
   margin: 0;
 }
 
-.header{
+.header {
   display: flex;
-  color:antiquewhite
+  color: antiquewhite;
+  justify-content: space-between;
+  align-items: center;
+}
+main {
+  display: flex;
+  justify-content: center;
+}
+.news-page {
+  display: grid;
+  justify-content: center;
+}
+
+.news-item {
+  margin: 10px 0 10px 0;
+  padding: 20px;
+  border: 1px solid black;
+
+}
+.news-item-title {
+  font-size: large;
+}
+.news-item-info {
+  display: flex;
+  justify-content: space-between;
+}
+.news-details-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
 }
