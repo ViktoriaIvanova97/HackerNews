@@ -3,6 +3,8 @@ import Button from 'antd/es/button'
 import { useSelector } from 'react-redux'
 import { selectorNews } from '../../RTK/selectors/selectors'
 import { data } from '../shared/data'
+import RootComments from './RootComments'
+import UpdateComments from '../shared/UpdateComments'
 
 function NewsDetails() {
   const navigate = useNavigate()
@@ -16,7 +18,7 @@ function NewsDetails() {
   }
 
   return (
-    <div style={{ height: '100vh', margin:'20px 0'}}>
+    <div style={{ margin: '20px 0' }}>
       <div>
         <Button
           onClick={() => {
@@ -39,9 +41,12 @@ function NewsDetails() {
         </div>
       </div>
       <div>
-        <p>Комментарии ({story.kids?.length || 0})</p>
+        <div className='comments-update'>
+          <p>Комментарии ({story.kids?.length || 0})</p>
+          <UpdateComments story={story} />
+        </div>
         {story.kids?.length > 0
-          ? story.kids.map((id) => id)
+          ? story.kids.map((id) => <RootComments id={id} />)
           : 'комментариев нет'}
       </div>
     </div>

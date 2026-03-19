@@ -33,3 +33,15 @@ export const getNews = createAsyncThunk(
     }
   }
 )
+
+export const getComments = createAsyncThunk(
+  'comments/getComments',
+  async (id, thunkAPI) => {
+    try {
+      const comment = await axios.get(`${API_NEWS_ID}${id}.json`)
+      return comment.data
+    } catch (error) {
+      return thunkAPI.rejectWithValue(error.message)
+    }
+  }
+)

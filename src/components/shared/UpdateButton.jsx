@@ -4,7 +4,6 @@ import { getNewsIds } from '../../api/hackerNews'
 
 function UpdateButton() {
   const dispatch = useDispatch()
-  
   const updateNews = () => {
     dispatch(getNewsIds())
   }
